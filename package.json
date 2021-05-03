@@ -1,0 +1,23 @@
+{
+  "name": "ip-address-tracker",
+  "version": "1.0.0",
+  "description": "![Design preview for the IP address tracker coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch src/sass:dist/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tediko/ip-address-tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tediko/ip-address-tracker/issues"
+  },
+  "homepage": "https://github.com/tediko/ip-address-tracker#readme",
+  "devDependencies": {
+    "sass": "^1.32.12"
+  }
+}
