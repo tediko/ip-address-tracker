@@ -87,6 +87,11 @@ i {
   width: 100%;
   height: calc(100vh - 300px);
 }
+@media (min-width: 769px) {
+  .map {
+    height: calc(100vh - 280px);
+  }
+}
 
 .tracker {
   background-image: url("../img/pattern-bg.png");
