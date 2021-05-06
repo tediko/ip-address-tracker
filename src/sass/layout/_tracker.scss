@@ -10,6 +10,10 @@
 
     &__container {
         height: 300px;
+
+        @include breakpoint('md') {
+            height: 280px;
+        }
     }
 
     &__search {
@@ -23,12 +27,27 @@
         font-weight: 500;
         font-size: 1.45rem;
         padding-top: 24px;
+        line-height: 30px;
+
+        @include breakpoint('md') {
+            font-size: 1.77rem;
+            padding-top: 33px;
+        }
     }
 
     &__form {
         display: flex;
         margin-top: 29px;
         width: 100%;
+
+        @include breakpoint('sm') {
+            max-width: 555px;
+            margin: 29px auto 0 auto;
+        }
+
+        @include breakpoint('md') {
+            margin-top: 31px;
+        }
     }
     
     &__form-input {
@@ -70,16 +89,53 @@
         flex-flow: column;
         gap: 24px;
         top: 166px;
-        left: 0;
         width: calc(100% - 48px);
         margin: 0 24px;
         padding: 24px;
         background: $c-white;
         border-radius: 15px;
+
+        @include breakpoint('md') {
+            flex-flow: row;
+            justify-content: space-between;
+            top: 200px;
+        }
+
+        @include breakpoint('lg') {
+            max-width: 1110px;
+            padding: 37px 32px 32px 36px;
+        }
     }
 
     &__results-box {
         text-align: center;
+
+        @include breakpoint('md') {
+            position: relative;
+            text-align: left;
+            max-width: 150px;
+            width: 100%;
+            
+            &:not(:first-child) ::before {
+                position: absolute;
+                content: '';
+                top: 50%;
+                left: -20px;
+                transform: translateY(-50%);
+                width: 1px;
+                height: 75px;
+                background: $c-black;
+                opacity: 0.1;
+            }
+        }
+
+        @include breakpoint('lg') {
+            max-width: 213px;
+
+            &:not(:first-child) ::before {
+                left: -30px;
+            }
+        }
     }
 
     &__results-heading {
@@ -87,6 +143,11 @@
         font-size: 0.55rem;
         text-transform: uppercase;
         letter-spacing: 1.46px;
+
+        @include breakpoint('lg') {
+            font-size: 0.66rem;
+            letter-spacing: 1.75px;
+        }
     }
 
     &__results-info {
@@ -95,5 +156,16 @@
         font-weight: 500;
         letter-spacing: 0.18px;
         margin-top: 7px;
+
+        @include breakpoint('md') {
+            margin-top: 10px;
+            font-size: 1.25rem;
+        }
+        
+        @include breakpoint('lg') {
+            font-size: 1.44rem;
+            line-height: 30px;
+            margin-top: 13px;
+        }
     }
 }

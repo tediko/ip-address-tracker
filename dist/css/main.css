@@ -98,6 +98,11 @@ i {
 .tracker__container {
   height: 300px;
 }
+@media (min-width: 769px) {
+  .tracker__container {
+    height: 280px;
+  }
+}
 .tracker__search {
   display: flex;
   flex-flow: column;
@@ -108,11 +113,29 @@ i {
   font-weight: 500;
   font-size: 1.45rem;
   padding-top: 24px;
+  line-height: 30px;
+}
+@media (min-width: 769px) {
+  .tracker__heading {
+    font-size: 1.77rem;
+    padding-top: 33px;
+  }
 }
 .tracker__form {
   display: flex;
   margin-top: 29px;
   width: 100%;
+}
+@media (min-width: 481px) {
+  .tracker__form {
+    max-width: 555px;
+    margin: 29px auto 0 auto;
+  }
+}
+@media (min-width: 769px) {
+  .tracker__form {
+    margin-top: 31px;
+  }
 }
 .tracker__form-input {
   padding: 18px 24px;
@@ -157,15 +180,54 @@ i {
   flex-flow: column;
   gap: 24px;
   top: 166px;
-  left: 0;
   width: calc(100% - 48px);
   margin: 0 24px;
   padding: 24px;
   background: white;
   border-radius: 15px;
 }
+@media (min-width: 769px) {
+  .tracker__results {
+    flex-flow: row;
+    justify-content: space-between;
+    top: 200px;
+  }
+}
+@media (min-width: 1025px) {
+  .tracker__results {
+    max-width: 1110px;
+    padding: 37px 32px 32px 36px;
+  }
+}
 .tracker__results-box {
   text-align: center;
+}
+@media (min-width: 769px) {
+  .tracker__results-box {
+    position: relative;
+    text-align: left;
+    max-width: 150px;
+    width: 100%;
+  }
+  .tracker__results-box:not(:first-child) ::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: -20px;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 75px;
+    background: black;
+    opacity: 0.1;
+  }
+}
+@media (min-width: 1025px) {
+  .tracker__results-box {
+    max-width: 213px;
+  }
+  .tracker__results-box:not(:first-child) ::before {
+    left: -30px;
+  }
 }
 .tracker__results-heading {
   color: #969696;
@@ -173,12 +235,31 @@ i {
   text-transform: uppercase;
   letter-spacing: 1.46px;
 }
+@media (min-width: 1025px) {
+  .tracker__results-heading {
+    font-size: 0.66rem;
+    letter-spacing: 1.75px;
+  }
+}
 .tracker__results-info {
   color: #2b2b2b;
   font-size: 1.11rem;
   font-weight: 500;
   letter-spacing: 0.18px;
   margin-top: 7px;
+}
+@media (min-width: 769px) {
+  .tracker__results-info {
+    margin-top: 10px;
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 1025px) {
+  .tracker__results-info {
+    font-size: 1.44rem;
+    line-height: 30px;
+    margin-top: 13px;
+  }
 }
 
 /* Base */
