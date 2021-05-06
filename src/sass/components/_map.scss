@@ -4,6 +4,7 @@
     $root: &;
     width: 100%;
     height: calc(100vh - 300px); //300px is height of tracker
+    z-index: 9;
 
     @include breakpoint('md') {
         height: calc(100vh - 280px);
