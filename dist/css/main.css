@@ -83,6 +83,11 @@ i {
   content: "";
 }
 
+.map {
+  width: 100%;
+  height: calc(100vh - 300px);
+}
+
 .tracker {
   background-image: url("../img/pattern-bg.png");
   background-repeat: no-repeat;
@@ -179,4 +184,5 @@ i {
 /* Base */
 /* Vendors */
 /* Utilities */
+/* Components */
 /* Layout */

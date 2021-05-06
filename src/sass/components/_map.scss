@@ -1,0 +1,7 @@
+@use '../utilities/' as *;
+
+.map {
+    $root: &;
+    width: 100%;
+    height: calc(100vh - 300px); //300px is height of tracker
+}
