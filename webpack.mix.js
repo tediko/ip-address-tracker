@@ -10,3 +10,6 @@ mix.js('src/js/app.js', 'js')
 
 // Disable success notifications
 mix.disableSuccessNotifications();
+
+// Copy a CSS file from leaflet framework
+mix.copy('node_modules/leaflet/dist/leaflet.css', 'dist/css');
