@@ -24,10 +24,10 @@
 
     &__heading {
         color: $c-white;
-        font-weight: 500;
         font-size: 1.45rem;
-        padding-top: 24px;
+        font-weight: 500;
         line-height: 30px;
+        padding-top: 24px;
 
         @include breakpoint('md') {
             font-size: 1.77rem;
@@ -58,10 +58,20 @@
         font-size: 1rem;
         letter-spacing: 0.26px;
         color: $c-gray-very-dark;
+        cursor: pointer;
 
         &::placeholder {
             font-family: $ff-primary;
             color: $c-gray-dark;
+        }
+
+        &:focus {
+            outline: 2px dashed tomato;
+            outline-offset: -4px;
+        }
+
+        &:focus:not(:focus-visible) {
+            outline: none;
         }
     }
 
@@ -76,8 +86,32 @@
         border-radius: 0px 15px 15px 0px;
         background-color: $c-black;
         cursor: pointer;
+        transition: background-color 300ms ease-in;
+        
+        @include breakpoint('md') {
+            &:hover {
+                background-color: lighten($c-gray-very-dark, 05);
+            }
 
-        i {
+            &:active {
+                .i-chevron-right {
+                    font-size: 0.7rem;
+                }
+            }
+        }
+
+        &:focus {
+            outline: 2px dashed tomato;
+            outline-offset: -4px;
+            background-color: lighten($c-gray-very-dark, 05);
+        }
+
+        &:focus:not(:focus-visible) {
+            outline: none;
+            background-color: $c-black;
+        }
+
+        .i-chevron-right {
             color: $c-white;
             font-size: 0.8rem;
         }
