@@ -83,6 +83,99 @@ i {
   content: "";
 }
 
+.tracker {
+  background-image: url("../img/pattern-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  padding: 0 24px;
+}
+.tracker__container {
+  height: 300px;
+}
+.tracker__search {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.tracker__heading {
+  color: white;
+  font-weight: 500;
+  font-size: 1.45rem;
+  padding-top: 24px;
+}
+.tracker__form {
+  display: flex;
+  margin-top: 29px;
+  width: 100%;
+}
+.tracker__form-input {
+  padding: 18px 24px;
+  width: 100%;
+  border-radius: 15px 0px 0px 15px;
+  border: none;
+  font-size: 1rem;
+  letter-spacing: 0.26px;
+  color: #2b2b2b;
+}
+.tracker__form-input::-moz-placeholder {
+  font-family: "Rubik", sans-serif;
+  color: #969696;
+}
+.tracker__form-input:-ms-input-placeholder {
+  font-family: "Rubik", sans-serif;
+  color: #969696;
+}
+.tracker__form-input::placeholder {
+  font-family: "Rubik", sans-serif;
+  color: #969696;
+}
+.tracker__form-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 58px;
+  height: 58px;
+  min-width: 58px;
+  border: none;
+  border-radius: 0px 15px 15px 0px;
+  background-color: black;
+  cursor: pointer;
+}
+.tracker__form-btn i {
+  color: white;
+  font-size: 0.8rem;
+}
+.tracker__results {
+  position: absolute;
+  display: flex;
+  flex-flow: column;
+  gap: 24px;
+  top: 166px;
+  left: 0;
+  width: calc(100% - 48px);
+  margin: 0 24px;
+  padding: 24px;
+  background: white;
+  border-radius: 15px;
+}
+.tracker__results-box {
+  text-align: center;
+}
+.tracker__results-heading {
+  color: #969696;
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 1.46px;
+}
+.tracker__results-info {
+  color: #2b2b2b;
+  font-size: 1.11rem;
+  font-weight: 500;
+  letter-spacing: 0.18px;
+  margin-top: 7px;
+}
+
 /* Base */
 /* Vendors */
 /* Utilities */

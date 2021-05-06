@@ -1,0 +1,99 @@
+@use '../utilities/' as *;
+
+.tracker {
+    $root: &;
+    background-image: url('../img/pattern-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 0 24px;
+
+    &__container {
+        height: 300px;
+    }
+
+    &__search {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+
+    &__heading {
+        color: $c-white;
+        font-weight: 500;
+        font-size: 1.45rem;
+        padding-top: 24px;
+    }
+
+    &__form {
+        display: flex;
+        margin-top: 29px;
+        width: 100%;
+    }
+    
+    &__form-input {
+        padding: 18px 24px;
+        width: 100%;
+        border-radius: 15px 0px 0px 15px;
+        border: none;
+        font-size: 1rem;
+        letter-spacing: 0.26px;
+        color: $c-gray-very-dark;
+
+        &::placeholder {
+            font-family: $ff-primary;
+            color: $c-gray-dark;
+        }
+    }
+
+    &__form-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 58px;
+        height: 58px;
+        min-width: 58px;
+        border: none;
+        border-radius: 0px 15px 15px 0px;
+        background-color: $c-black;
+        cursor: pointer;
+
+        i {
+            color: $c-white;
+            font-size: 0.8rem;
+        }
+    }
+
+    &__results {
+        position: absolute;
+        display: flex;
+        flex-flow: column;
+        gap: 24px;
+        top: 166px;
+        left: 0;
+        width: calc(100% - 48px);
+        margin: 0 24px;
+        padding: 24px;
+        background: $c-white;
+        border-radius: 15px;
+    }
+
+    &__results-box {
+        text-align: center;
+    }
+
+    &__results-heading {
+        color: $c-gray-dark;
+        font-size: 0.55rem;
+        text-transform: uppercase;
+        letter-spacing: 1.46px;
+    }
+
+    &__results-info {
+        color: $c-gray-very-dark;
+        font-size: 1.11rem;
+        font-weight: 500;
+        letter-spacing: 0.18px;
+        margin-top: 7px;
+    }
+}
