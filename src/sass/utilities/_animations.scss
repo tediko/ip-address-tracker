@@ -1,1 +1,20 @@
 @use '../utilities/variables' as *;
+
+// Tracker -> Loader
+@keyframes loaderFirst {
+    50% {
+      transform: scale(1.4) rotate(360deg);
+    }
+    100% {
+      transform: scale(1) rotate(720deg);
+    }
+  }
+  
+@keyframes loaderSec {
+    50% {
+        transform: scale(1.5) rotate(-360deg);
+    }
+    100% {
+        transform: scale(1) rotate(-720deg);
+    }
+}
