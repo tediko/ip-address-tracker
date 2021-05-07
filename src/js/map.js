@@ -6,7 +6,7 @@ export default class Map {
     }
 
     setupEvents() {
-        this.displayMap()
+        /* this.displayMap() */
     }
 
     createMap() {
