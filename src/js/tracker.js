@@ -1,4 +1,5 @@
 import Map from './map.js';
+import CollapseMenu from './collapseMenu';
 
 export default class Tracker {
     constructor() {
@@ -22,6 +23,7 @@ export default class Tracker {
         this.results = document.querySelectorAll(`[${this.selectors.results}]`);
         this.loader = document.querySelector(`[${this.selectors.loader}]`);
         this.map = new Map();
+        this.collapse = new CollapseMenu();
         
         if (!this.form || !this.input || !this.button || !this.results || !this.loader || !this.map) return false;
 
@@ -59,6 +61,7 @@ export default class Tracker {
             return false;
         }
 
+        this.collapse.disable();
         this.loader.style.display = "flex"; // <--- ANIMATION
         this.formEnabled = false;
         this.fetchData(this.userInput);
