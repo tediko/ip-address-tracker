@@ -254,7 +254,8 @@ var Tracker = /*#__PURE__*/function () {
         input: 'data-input',
         button: 'data-btn',
         results: 'data-result',
-        loader: 'data-loader'
+        loader: 'data-loader',
+        loadingClass: 'loading'
       };
       this.form = document.querySelector("[".concat(this.selectors.form, "]"));
       this.input = document.querySelector("[".concat(this.selectors.input, "]"));
@@ -302,8 +303,7 @@ var Tracker = /*#__PURE__*/function () {
       }
 
       this.collapse.disable();
-      this.loader.style.display = "flex"; // <--- ANIMATION
-
+      this.loader.classList.add("".concat(this.selectors.loadingClass));
       this.formEnabled = false;
       this.fetchData(this.userInput);
       this.form.reset();
@@ -321,7 +321,8 @@ var Tracker = /*#__PURE__*/function () {
         _this2.formEnabled = true;
         _this2.cordX = data.location.lat;
         _this2.cordY = data.location.lng;
-        _this2.loader.style.display = "none"; // <--- ANIMATION
+
+        _this2.loader.classList.remove("".concat(_this2.selectors.loadingClass));
 
         _this2.moveMapTo(_this2.cordX, _this2.cordY);
 

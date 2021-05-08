@@ -14,7 +14,8 @@ export default class Tracker {
             input: 'data-input',
             button: 'data-btn',
             results: 'data-result',
-            loader: 'data-loader'
+            loader: 'data-loader',
+            loadingClass: 'loading'
         }
 
         this.form = document.querySelector(`[${this.selectors.form}]`);
@@ -62,7 +63,7 @@ export default class Tracker {
         }
 
         this.collapse.disable();
-        this.loader.style.display = "flex"; // <--- ANIMATION
+        this.loader.classList.add(`${this.selectors.loadingClass}`);
         this.formEnabled = false;
         this.fetchData(this.userInput);
         this.form.reset();
@@ -77,7 +78,7 @@ export default class Tracker {
                 this.formEnabled = true;
                 this.cordX = data.location.lat;
                 this.cordY = data.location.lng;
-                this.loader.style.display = "none"; // <--- ANIMATION
+                this.loader.classList.remove(`${this.selectors.loadingClass}`);
                 this.moveMapTo(this.cordX, this.cordY);
                 this.changeContent(data)
             })
