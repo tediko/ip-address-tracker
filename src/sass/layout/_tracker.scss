@@ -169,6 +169,19 @@
         color: $c-gray-very-dark;
         font-size: 1.3rem;
         cursor: pointer;
+
+        &:active {
+            font-size: 1.4rem;
+        }
+
+        &:focus {
+            outline: 2px dashed tomato;
+            outline-offset: 2px;
+        }
+
+        &:focus:not(:focus-visible) {
+            outline: none;
+        }
     }
 
     &__results-wrapper {

@@ -396,6 +396,16 @@ i {
   font-size: 1.3rem;
   cursor: pointer;
 }
+.tracker__results-expand:active {
+  font-size: 1.4rem;
+}
+.tracker__results-expand:focus {
+  outline: 2px dashed tomato;
+  outline-offset: 2px;
+}
+.tracker__results-expand:focus:not(:focus-visible) {
+  outline: none;
+}
 .tracker__results-wrapper {
   display: flex;
   flex-flow: column;
