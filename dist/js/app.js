@@ -57,7 +57,7 @@ var CollapseMenu = /*#__PURE__*/function () {
       this.timer = false;
       this.duration = 500;
       return true;
-    } // Hamburger event listener
+    } // Button event listener
 
   }, {
     key: "setupEvents",
@@ -67,13 +67,13 @@ var CollapseMenu = /*#__PURE__*/function () {
       this.button.addEventListener('click', function () {
         return _this.toggle();
       });
-    } // Toggle hamburger menu
+    } // Toggle tracker__results collapse/exepand.
 
   }, {
     key: "toggle",
     value: function toggle() {
       !this.open ? this.show() : this.hide();
-    } // Animation while hamburger is open
+    } // Animation while tracker__results is collapsing.
 
   }, {
     key: "show",
@@ -89,7 +89,7 @@ var CollapseMenu = /*#__PURE__*/function () {
         _this2.button.style.pointerEvents = "all";
         _this2.timer = false;
       }, this.duration);
-    } // Animation while hamburger is closed
+    } // Animation while tracker__results is expanding.
 
   }, {
     key: "hide",
@@ -109,7 +109,8 @@ var CollapseMenu = /*#__PURE__*/function () {
         _this3.timer = false;
       }, this.duration);
       this.open = false;
-    }
+    } // Function to disable collapseMenu when needed.
+
   }, {
     key: "disable",
     value: function disable() {

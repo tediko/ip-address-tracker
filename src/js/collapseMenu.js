@@ -24,17 +24,17 @@ export default class CollapseMenu {
         return true;
     }
 
-    // Hamburger event listener
+    // Button event listener
     setupEvents() {
         this.button.addEventListener('click', () => this.toggle());
     }
 
-    // Toggle hamburger menu
+    // Toggle tracker__results collapse/exepand.
     toggle() {
         !this.open ? this.show() : this.hide();
     }
 
-    // Animation while hamburger is open
+    // Animation while tracker__results is collapsing.
     show() {
         this.button.style.pointerEvents = "none";
 
@@ -50,7 +50,7 @@ export default class CollapseMenu {
         }, this.duration);
     }
 
-    // Animation while hamburger is closed
+    // Animation while tracker__results is expanding.
     hide() {
         this.button.style.pointerEvents = "none";
 
@@ -68,6 +68,7 @@ export default class CollapseMenu {
         this.open = false;
     }
 
+    // Function to disable collapseMenu when needed.
     disable() {
         this.results.classList.remove('open');
         this.results.classList.remove('close');
