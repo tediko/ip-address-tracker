@@ -191,7 +191,7 @@
 
         @include breakpoint('md') {
             flex-flow: row;
-            justify-content: center;
+            justify-content: space-between;
         }
     }
 

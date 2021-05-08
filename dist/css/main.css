@@ -414,7 +414,7 @@ i {
 @media (min-width: 769px) {
   .tracker__results-wrapper {
     flex-flow: row;
-    justify-content: center;
+    justify-content: space-between;
   }
 }
 .tracker__results-box {
