@@ -359,13 +359,13 @@ i {
   }
 }
 .tracker__results.close {
-  -webkit-animation: collapse-mobile 500ms ease-in forwards;
-          animation: collapse-mobile 500ms ease-in forwards;
+  -webkit-animation: collapse-mobile 500ms cubic-bezier(0.28, -0.19, 1, 0.07) forwards;
+          animation: collapse-mobile 500ms cubic-bezier(0.28, -0.19, 1, 0.07) forwards;
 }
 @media (min-width: 769px) {
   .tracker__results.close {
-    -webkit-animation: collapse-desktop 500ms ease-in forwards;
-            animation: collapse-desktop 500ms ease-in forwards;
+    -webkit-animation: collapse-desktop 500ms cubic-bezier(0.28, -0.19, 1, 0.07) forwards;
+            animation: collapse-desktop 500ms cubic-bezier(0.28, -0.19, 1, 0.07) forwards;
   }
 }
 .tracker__results.close .tracker__results-wrapper {
