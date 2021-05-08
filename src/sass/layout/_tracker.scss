@@ -249,7 +249,6 @@
 
         @include breakpoint('md') {
             margin: 10px 0 0 0;
-            font-size: 1.25rem;
         }
         
         @include breakpoint('lg') {

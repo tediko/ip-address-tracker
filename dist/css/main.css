@@ -471,7 +471,6 @@ i {
 @media (min-width: 769px) {
   .tracker__results-info {
     margin: 10px 0 0 0;
-    font-size: 1.25rem;
   }
 }
 @media (min-width: 1025px) {
