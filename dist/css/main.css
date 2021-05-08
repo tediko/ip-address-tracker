@@ -395,6 +395,7 @@ i {
   color: #2b2b2b;
   font-size: 1.3rem;
   cursor: pointer;
+  z-index: 9;
 }
 .tracker__results-expand:active {
   font-size: 1.4rem;

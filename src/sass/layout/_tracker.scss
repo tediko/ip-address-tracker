@@ -169,6 +169,7 @@
         color: $c-gray-very-dark;
         font-size: 1.3rem;
         cursor: pointer;
+        z-index: 9;
 
         &:active {
             font-size: 1.4rem;
