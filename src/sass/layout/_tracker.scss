@@ -41,7 +41,7 @@
         width: 100%;
 
         &:focus-within {
-            outline: 2px dashed tomato;
+            outline: 2px dashed $c-red;
             outline-offset: 4px;   
         }
 
@@ -176,7 +176,7 @@
         }
 
         &:focus {
-            outline: 2px dashed tomato;
+            outline: 2px dashed $c-red;
             outline-offset: 2px;
         }
 
