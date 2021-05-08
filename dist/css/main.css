@@ -322,11 +322,12 @@ i {
   font-size: 1.11rem;
   font-weight: 500;
   letter-spacing: 0.18px;
-  margin-top: 7px;
+  margin: 7px auto 0 auto;
+  max-width: 200px;
 }
 @media (min-width: 769px) {
   .tracker__results-info {
-    margin-top: 10px;
+    margin: 10px 0 0 0;
     font-size: 1.25rem;
   }
 }
