@@ -40,6 +40,11 @@
         margin-top: 29px;
         width: 100%;
 
+        &:focus-within {
+            outline: 2px dashed tomato;
+            outline-offset: 4px;   
+        }
+
         @include breakpoint('sm') {
             max-width: 555px;
             margin: 29px auto 0 auto;
@@ -66,11 +71,6 @@
         }
 
         &:focus {
-            outline: 2px dashed tomato;
-            outline-offset: -4px;
-        }
-
-        &:focus:not(:focus-visible) {
             outline: none;
         }
     }
@@ -101,8 +101,7 @@
         }
 
         &:focus {
-            outline: 2px dashed tomato;
-            outline-offset: -4px;
+            outline: none;
             background-color: lighten($c-gray-very-dark, 05);
         }
 

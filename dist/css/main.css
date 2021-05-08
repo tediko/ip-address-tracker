@@ -164,6 +164,10 @@ i {
   margin-top: 29px;
   width: 100%;
 }
+.tracker__form:focus-within {
+  outline: 2px dashed tomato;
+  outline-offset: 4px;
+}
 @media (min-width: 481px) {
   .tracker__form {
     max-width: 555px;
@@ -198,10 +202,6 @@ i {
   color: #969696;
 }
 .tracker__form-input:focus {
-  outline: 2px dashed tomato;
-  outline-offset: -4px;
-}
-.tracker__form-input:focus:not(:focus-visible) {
   outline: none;
 }
 .tracker__form-btn {
@@ -226,8 +226,7 @@ i {
   }
 }
 .tracker__form-btn:focus {
-  outline: 2px dashed tomato;
-  outline-offset: -4px;
+  outline: none;
   background-color: #383838;
 }
 .tracker__form-btn:focus:not(:focus-visible) {
