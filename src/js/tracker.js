@@ -26,8 +26,9 @@ export default class Tracker {
 
         this.proxy = `https://cors.bridged.cc/`;
         this.apiLink = `https://geo.ipify.org/api/v1?apiKey=`;
-        this.API_KEY = `at_ONQTCJNH3JIump9YwqOKBseCMpBIH`;
+        this.API_KEY = `at_R0HafQ3Z5HCsAKIzRon7oFEXnSwp1`;
         this.ipAddressRegex = /^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$/;
+        this.domainRegex = /^(?!:\/\/)([a-zA-Z0-9-_]+\.)*[a-zA-Z0-9][a-zA-Z0-9-_]+\.[a-zA-Z]{2,11}?$/;
         this.ipAddress = ``;
         this.formEnabled = false;
         
@@ -45,9 +46,19 @@ export default class Tracker {
     // Validate user input and pass userInput value to fetchData function.
     formValidation() {
         this.userInput = this.input.value;
-        if (!this.ipAddressRegex.test(this.userInput)) return false;
+        this.ipTestRegex = this.ipAddressRegex.test(this.userInput);
+        this.domainTestRegex = this.domainRegex.test(this.userInput);
         
-        this.loader.style.display = "flex";
+        // Checking input for ip address or domain
+        if (this.ipTestRegex) {
+            this.userInput = this.input.value;
+        } else if (this.domainTestRegex) {
+            this.userInput = `&domain=${this.userInput}`;
+        } else {
+            return false;
+        }
+
+        this.loader.style.display = "flex"; // <--- ANIMATION
         this.formEnabled = false;
         this.fetchData(this.userInput);
         this.form.reset();
@@ -62,7 +73,7 @@ export default class Tracker {
                 this.formEnabled = true;
                 this.cordX = data.location.lat;
                 this.cordY = data.location.lng;
-                this.loader.style.display = "none";
+                this.loader.style.display = "none"; // <--- ANIMATION
                 this.moveMapTo(this.cordX, this.cordY);
                 this.changeContent(data)
             })
