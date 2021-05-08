@@ -55,6 +55,7 @@ var CollapseMenu = /*#__PURE__*/function () {
       this.expanded = this.button.getAttribute('aria-expanded') === 'false' ? false : true;
       this.open = false;
       this.timer = false;
+      this.duration = 500;
       return true;
     } // Hamburger event listener
 
@@ -87,7 +88,7 @@ var CollapseMenu = /*#__PURE__*/function () {
       this.timer = window.setTimeout(function () {
         _this2.button.style.pointerEvents = "all";
         _this2.timer = false;
-      }, 250);
+      }, this.duration);
     } // Animation while hamburger is closed
 
   }, {
@@ -106,7 +107,7 @@ var CollapseMenu = /*#__PURE__*/function () {
 
         _this3.button.style.pointerEvents = "all";
         _this3.timer = false;
-      }, 500);
+      }, this.duration);
       this.open = false;
     }
   }, {

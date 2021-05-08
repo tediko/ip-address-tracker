@@ -20,6 +20,7 @@ export default class CollapseMenu {
         this.expanded = this.button.getAttribute('aria-expanded') === 'false' ? false : true;
         this.open = false;
         this.timer = false;
+        this.duration = 500;
         return true;
     }
 
@@ -46,7 +47,7 @@ export default class CollapseMenu {
         this.timer = window.setTimeout(() => {
             this.button.style.pointerEvents = "all";
             this.timer = false;
-        }, 250);
+        }, this.duration);
     }
 
     // Animation while hamburger is closed
@@ -63,7 +64,7 @@ export default class CollapseMenu {
             this.results.classList.remove('close');
             this.button.style.pointerEvents = "all";
             this.timer = false;
-        }, 500);
+        }, this.duration);
         this.open = false;
     }
 
