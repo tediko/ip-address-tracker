@@ -75,7 +75,7 @@ var Map = /*#__PURE__*/function () {
   }, {
     key: "createMarker",
     value: function createMarker() {
-      this.marker = leaflet__WEBPACK_IMPORTED_MODULE_0__.marker([41.381747, 2.121447], {
+      this.newMarker = leaflet__WEBPACK_IMPORTED_MODULE_0__.marker([41.381747, 2.121447], {
         icon: this.icon
       }).addTo(this.map).bindPopup('We are here!');
     }
@@ -91,7 +91,7 @@ var Map = /*#__PURE__*/function () {
     key: "flyTo",
     value: function flyTo(mapX, mapY) {
       this.map.flyTo([mapX, mapY], 13);
-      this.map.removeLayer(this.marker);
+      this.map.removeLayer(this.newMarker);
       this.newMarker = leaflet__WEBPACK_IMPORTED_MODULE_0__.marker([mapX, mapY], {
         icon: this.icon
       }).addTo(this.map).bindPopup('We are here!');
@@ -131,6 +131,7 @@ var Tracker = /*#__PURE__*/function () {
 
     if (!this.vars()) return false;
     this.setupEvents();
+    this.init();
   }
 
   _createClass(Tracker, [{
@@ -152,8 +153,9 @@ var Tracker = /*#__PURE__*/function () {
       if (!this.form || !this.input || !this.button || !this.results || !this.loader || !this.map) return false;
       this.proxy = "https://cors.bridged.cc/";
       this.apiLink = "https://geo.ipify.org/api/v1?apiKey=";
-      this.API_KEY = "at_ONQTCJNH3JIump9YwqOKBseCMpBIH";
+      this.API_KEY = "at_R0HafQ3Z5HCsAKIzRon7oFEXnSwp1";
       this.ipAddressRegex = /^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$/;
+      this.domainRegex = /^(?!:\/\/)([a-zA-Z0-9-_]+\.)*[a-zA-Z0-9][a-zA-Z0-9-_]+\.[a-zA-Z]{2,11}?$/;
       this.ipAddress = "";
       this.formEnabled = false;
       return true;
@@ -163,8 +165,8 @@ var Tracker = /*#__PURE__*/function () {
     value: function setupEvents() {
       var _this = this;
 
-      this.init();
-      this.form.addEventListener('submit', function () {
+      this.form.addEventListener('submit', function (event) {
+        event.preventDefault();
         if (!_this.formEnabled) return false;
 
         _this.formValidation();
@@ -175,8 +177,19 @@ var Tracker = /*#__PURE__*/function () {
     key: "formValidation",
     value: function formValidation() {
       this.userInput = this.input.value;
-      if (!this.ipAddressRegex.test(this.userInput)) return false;
-      this.loader.style.display = "flex";
+      this.ipTestRegex = this.ipAddressRegex.test(this.userInput);
+      this.domainTestRegex = this.domainRegex.test(this.userInput); // Checking input for ip address or domain
+
+      if (this.ipTestRegex) {
+        this.userInput = this.input.value;
+      } else if (this.domainTestRegex) {
+        this.userInput = "&domain=".concat(this.userInput);
+      } else {
+        return false;
+      }
+
+      this.loader.style.display = "flex"; // <--- ANIMATION
+
       this.formEnabled = false;
       this.fetchData(this.userInput);
       this.form.reset();
@@ -194,7 +207,7 @@ var Tracker = /*#__PURE__*/function () {
         _this2.formEnabled = true;
         _this2.cordX = data.location.lat;
         _this2.cordY = data.location.lng;
-        _this2.loader.style.display = "none";
+        _this2.loader.style.display = "none"; // <--- ANIMATION
 
         _this2.moveMapTo(_this2.cordX, _this2.cordY);
 
