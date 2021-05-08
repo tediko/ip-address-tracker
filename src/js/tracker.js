@@ -4,6 +4,7 @@ export default class Tracker {
     constructor() {
         if (!this.vars()) return false;
         this.setupEvents();
+        this.init();
     }
 
     vars() {
@@ -36,7 +37,6 @@ export default class Tracker {
     }
     
     setupEvents() {
-        this.init();
         this.form.addEventListener('submit', (event) => {
             event.preventDefault();
             if (!this.formEnabled) return false;
