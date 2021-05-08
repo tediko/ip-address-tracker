@@ -119,9 +119,6 @@
 
     &__results {
         position: absolute;
-/*         display: flex;
-        flex-flow: column;
-        gap: 24px; */
         top: 166px;
         width: calc(100% - 48px);
         padding: 24px;
@@ -131,8 +128,6 @@
         z-index: 10;
 
         @include breakpoint('md') {
-/*             flex-flow: row;
-            justify-content: space-between; */
             top: 200px;
         }
 
