@@ -128,11 +128,35 @@
 
         @include breakpoint('md') {
             top: 200px;
+            padding: 37px 32px 32px 36px;
         }
 
         @include breakpoint('lg') {
             max-width: 1110px;
-            padding: 37px 32px 32px 36px;
+        }
+
+        &.close {
+            animation: collapse-mobile 500ms ease-in forwards;
+
+            @include breakpoint('md') {
+                animation: collapse-desktop 500ms ease-in forwards;
+            }
+
+            #{$root}__results-wrapper {
+                animation: collapse-opacity 500ms ease-in forwards;
+            }
+        }
+
+        &.open {
+            animation: expand-mobile 500ms ease-in forwards;
+
+            @include breakpoint('md') {
+                animation: expand-desktop 500ms ease-in forwards;
+            }
+
+            #{$root}__results-wrapper {
+                animation: expand-opacity 500ms ease-in forwards;
+            }
         }
     }
 

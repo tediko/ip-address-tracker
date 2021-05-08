@@ -18,3 +18,59 @@
         transform: scale(1) rotate(-720deg);
     }
 }
+
+// Tracker -> Results
+
+@keyframes collapse-mobile {
+  0% {
+      height: 312px;
+  }
+  100% {
+      height: 67px;
+  }
+}
+
+@keyframes collapse-desktop {
+  0% {
+      height: 186px;
+  }
+  100% {
+      height: 20px;
+  }
+}
+
+@keyframes collapse-opacity {
+  0% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+@keyframes expand-mobile {
+  0% {
+    height: 67px;
+  }
+  100% {
+    height: 312px;
+  }
+}
+
+@keyframes expand-desktop {
+  0% {
+    height: 20px;
+  }
+  100% {
+    height: 186px;
+  }
+}
+
+@keyframes expand-opacity {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}

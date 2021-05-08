@@ -77,6 +77,102 @@ ol[role=list] {
     transform: scale(1) rotate(-720deg);
   }
 }
+@-webkit-keyframes collapse-mobile {
+  0% {
+    height: 312px;
+  }
+  100% {
+    height: 67px;
+  }
+}
+@keyframes collapse-mobile {
+  0% {
+    height: 312px;
+  }
+  100% {
+    height: 67px;
+  }
+}
+@-webkit-keyframes collapse-desktop {
+  0% {
+    height: 186px;
+  }
+  100% {
+    height: 20px;
+  }
+}
+@keyframes collapse-desktop {
+  0% {
+    height: 186px;
+  }
+  100% {
+    height: 20px;
+  }
+}
+@-webkit-keyframes collapse-opacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes collapse-opacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes expand-mobile {
+  0% {
+    height: 67px;
+  }
+  100% {
+    height: 312px;
+  }
+}
+@keyframes expand-mobile {
+  0% {
+    height: 67px;
+  }
+  100% {
+    height: 312px;
+  }
+}
+@-webkit-keyframes expand-desktop {
+  0% {
+    height: 20px;
+  }
+  100% {
+    height: 186px;
+  }
+}
+@keyframes expand-desktop {
+  0% {
+    height: 20px;
+  }
+  100% {
+    height: 186px;
+  }
+}
+@-webkit-keyframes expand-opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes expand-opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 html {
   font-size: 18px;
 }
@@ -254,13 +350,41 @@ i {
 @media (min-width: 769px) {
   .tracker__results {
     top: 200px;
+    padding: 37px 32px 32px 36px;
   }
 }
 @media (min-width: 1025px) {
   .tracker__results {
     max-width: 1110px;
-    padding: 37px 32px 32px 36px;
   }
+}
+.tracker__results.close {
+  -webkit-animation: collapse-mobile 500ms ease-in forwards;
+          animation: collapse-mobile 500ms ease-in forwards;
+}
+@media (min-width: 769px) {
+  .tracker__results.close {
+    -webkit-animation: collapse-desktop 500ms ease-in forwards;
+            animation: collapse-desktop 500ms ease-in forwards;
+  }
+}
+.tracker__results.close .tracker__results-wrapper {
+  -webkit-animation: collapse-opacity 500ms ease-in forwards;
+          animation: collapse-opacity 500ms ease-in forwards;
+}
+.tracker__results.open {
+  -webkit-animation: expand-mobile 500ms ease-in forwards;
+          animation: expand-mobile 500ms ease-in forwards;
+}
+@media (min-width: 769px) {
+  .tracker__results.open {
+    -webkit-animation: expand-desktop 500ms ease-in forwards;
+            animation: expand-desktop 500ms ease-in forwards;
+  }
+}
+.tracker__results.open .tracker__results-wrapper {
+  -webkit-animation: expand-opacity 500ms ease-in forwards;
+          animation: expand-opacity 500ms ease-in forwards;
 }
 .tracker__results-expand {
   position: absolute;
