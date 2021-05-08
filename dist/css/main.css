@@ -220,6 +220,11 @@ i {
   height: calc(100vh - 300px);
   z-index: 7;
 }
+@media (max-height: 520px) {
+  .map {
+    height: 300px;
+  }
+}
 @media (min-width: 769px) {
   .map {
     height: calc(100vh - 280px);

@@ -6,6 +6,10 @@
     height: calc(100vh - 300px); //300px is height of tracker
     z-index: 7;
 
+    @media (max-height: 520px) {
+        height: 300px;
+    }
+
     @include breakpoint('md') {
         height: calc(100vh - 280px);
     }
