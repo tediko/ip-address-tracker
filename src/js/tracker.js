@@ -37,7 +37,8 @@ export default class Tracker {
     
     setupEvents() {
         this.init();
-        this.form.addEventListener('submit', () => {
+        this.form.addEventListener('submit', (event) => {
+            event.preventDefault();
             if (!this.formEnabled) return false;
             this.formValidation();
         })
