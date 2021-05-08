@@ -119,9 +119,9 @@
 
     &__results {
         position: absolute;
-        display: flex;
+/*         display: flex;
         flex-flow: column;
-        gap: 24px;
+        gap: 24px; */
         top: 166px;
         width: calc(100% - 48px);
         padding: 24px;
@@ -131,14 +131,25 @@
         z-index: 10;
 
         @include breakpoint('md') {
-            flex-flow: row;
-            justify-content: space-between;
+/*             flex-flow: row;
+            justify-content: space-between; */
             top: 200px;
         }
 
         @include breakpoint('lg') {
             max-width: 1110px;
             padding: 37px 32px 32px 36px;
+        }
+    }
+
+    &__results-wrapper {
+        display: flex;
+        flex-flow: column;
+        gap: 24px;
+
+        @include breakpoint('md') {
+            flex-flow: row;
+            justify-content: center;
         }
     }
 
