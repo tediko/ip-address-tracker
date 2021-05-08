@@ -262,6 +262,16 @@ i {
     padding: 37px 32px 32px 36px;
   }
 }
+.tracker__results-expand {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: none;
+  background: none;
+  color: #2b2b2b;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
 .tracker__results-wrapper {
   display: flex;
   flex-flow: column;

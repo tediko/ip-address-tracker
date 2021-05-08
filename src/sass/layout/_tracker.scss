@@ -136,6 +136,17 @@
         }
     }
 
+    &__results-expand {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        border: none;
+        background: none;
+        color: $c-gray-very-dark;
+        font-size: 1.3rem;
+        cursor: pointer;
+    }
+
     &__results-wrapper {
         display: flex;
         flex-flow: column;

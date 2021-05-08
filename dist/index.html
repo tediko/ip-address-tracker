@@ -19,7 +19,8 @@
             <input type="text" class="tracker__form-input" placeholder="Search for any IP address or domain" data-input>
             <button class="tracker__form-btn" aria-label="Search and display results" data-btn><i class="i-chevron-right"></i></button>
           </form>
-          <div class="tracker__results">
+          <div id="results" class="tracker__results">
+            <button class="tracker__results-expand" aria-expanded="true" aria-controls="results" aria-label="Collapse results" data-expand><i class="i-expand"></i></button>
             <div class="tracker__results-wrapper" aria-live="polite" aria-atomic="true">
               <div class="tracker__results-box">
                 <h2 class="tracker__results-heading">IP Address</h2>
