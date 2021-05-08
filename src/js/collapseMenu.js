@@ -7,7 +7,7 @@ export default class CollapseMenu {
     vars() {
         this.selectors = {
             button: 'data-expand',
-            results: 'data-results-wrapper',
+            results: 'data-results-container',
             openClass: 'open',
             closeClass: 'close'
         };

@@ -45,7 +45,7 @@ var CollapseMenu = /*#__PURE__*/function () {
     value: function vars() {
       this.selectors = {
         button: 'data-expand',
-        results: 'data-results-wrapper',
+        results: 'data-results-container',
         openClass: 'open',
         closeClass: 'close'
       };
