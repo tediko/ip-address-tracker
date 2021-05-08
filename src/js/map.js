@@ -31,7 +31,7 @@ export default class Map {
     }
 
     createMarker() {
-        this.marker = leaflet.marker([41.381747, 2.121447], {icon: this.icon})
+        this.newMarker = leaflet.marker([41.381747, 2.121447], {icon: this.icon})
         .addTo(this.map)
         .bindPopup('We are here!');
     }
@@ -45,7 +45,7 @@ export default class Map {
 
     flyTo(mapX, mapY) {
         this.map.flyTo([mapX, mapY], 13);
-        this.map.removeLayer(this.marker);
+        this.map.removeLayer(this.newMarker);
 
         this.newMarker = leaflet.marker([mapX, mapY], {icon: this.icon})
             .addTo(this.map)
