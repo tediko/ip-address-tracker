@@ -318,7 +318,7 @@ var Tracker = /*#__PURE__*/function () {
     value: function fetchData(ipAddress) {
       var _this2 = this;
 
-      fetch("".concat(this.apiLink, "?ip=8.8.8.8")).then(function (res) {
+      fetch("".concat(this.apiLink, "?ip=&ipAddress=8.8.8.8")).then(function (res) {
         return res.json();
       }).then(function (data) {
         console.log(data);
