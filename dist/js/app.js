@@ -298,7 +298,7 @@ var Tracker = /*#__PURE__*/function () {
       this.form.classList.remove("".concat(this.selectors.invalidClass)); // Checking input for ip address or domain
 
       if (this.ipTestRegex) {
-        this.userInput = "ipAddress=".concat(this.input.value);
+        this.userInput = "ipAddress=".concat(this.userInput);
         console.log(this.userInput);
       } else if (this.domainTestRegex) {
         this.userInput = "domain=".concat(this.userInput);
@@ -320,7 +320,7 @@ var Tracker = /*#__PURE__*/function () {
     value: function fetchData(ipAddress) {
       var _this2 = this;
 
-      fetch("".concat(this.apiLink, "ip=ipAddress=1.2.3.4")).then(function (res) {
+      fetch("".concat(this.apiLink, "ip=").concat(ipAddress || this.ipAddress)).then(function (res) {
         return res.json();
       }).then(function (data) {
         console.log(data);
