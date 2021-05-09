@@ -56,9 +56,11 @@ export default class Tracker {
 
         // Checking input for ip address or domain
         if (this.ipTestRegex) {
-            this.userInput = `&ipAddress=${this.input.value}`;
+            this.userInput = `ipAddress=${this.input.value}`;
+            console.log(this.userInput);
         } else if (this.domainTestRegex) {
-            this.userInput = `&domain=${this.userInput}`;
+            this.userInput = `domain=${this.userInput}`;
+            console.log(this.userInput);
         } else {
             this.form.classList.add(`${this.selectors.invalidClass}`);
             return false;
@@ -73,7 +75,7 @@ export default class Tracker {
 
     // Fetching data from geo API.
     fetchData(ipAddress) {
-        fetch(`${this.apiLink}?ip=&ipAddress=8.8.8.8`)
+        fetch(`${this.apiLink}?ip=?ipAddress=1.2.3.4`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -114,7 +116,7 @@ export default class Tracker {
         .then(res => res.text())
         .then(data => {
             let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/
-            this.ipAddress = `&ipAddress=${data.match(ipRegex)[0]}`;
+            this.ipAddress = `ipAddress=${data.match(ipRegex)[0]}`;
             this.fetchData();
         })
     }
