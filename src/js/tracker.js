@@ -73,7 +73,7 @@ export default class Tracker {
 
     // Fetching data from geo API.
     fetchData(ipAddress) {
-        fetch(`${this.apiLink}?ip=${ipAddress || this.ipAddress}`)
+        fetch(`${this.apiLink}?ip=8.8.8.8`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
