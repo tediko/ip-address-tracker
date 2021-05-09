@@ -34,9 +34,8 @@ Hello! This is my solution to [IP address tracker - Frontend Mentor](https://www
 
 ### Links
 
-[LIVE PREVIEW](https://iptracker-tediko.netlify.app/)
-
-[Frontend Mentor](https://www.frontendmentor.io) challenges allow you to improve your skills in a real-life workflow.
+- [LIVE PREVIEW](https://iptracker-tediko.netlify.app/) to check my solution.
+- [Frontend Mentor](https://www.frontendmentor.io) challenges allow you to improve your skills in a real-life workflow.
 
 ## My process
 
@@ -48,6 +47,8 @@ Hello! This is my solution to [IP address tracker - Frontend Mentor](https://www
  - Mobile first
  - Semantic HTML5 markup
  - Webpack
+ - [LeafletJS library](https://>leafletjs.com/)
+ - [IP Geolocation API](https://geo.ipify.org/)
 
 ### Features
 
