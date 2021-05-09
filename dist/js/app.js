@@ -268,7 +268,6 @@ var Tracker = /*#__PURE__*/function () {
       this.map = new _map_js__WEBPACK_IMPORTED_MODULE_0__.default();
       this.collapse = new _collapseMenu__WEBPACK_IMPORTED_MODULE_1__.default();
       if (!this.form || !this.input || !this.button || !this.results || !this.loader || !this.map) return false;
-      this.proxy = "https://cors.bridged.cc/";
       this.apiLink = "/.netlify/functions/geoapi?";
       this.ipAddressRegex = /^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$/;
       this.domainRegex = /^(?!:\/\/)([a-zA-Z0-9-_]+\.)*[a-zA-Z0-9][a-zA-Z0-9-_]+\.[a-zA-Z]{2,11}?$/;
@@ -299,10 +298,8 @@ var Tracker = /*#__PURE__*/function () {
 
       if (this.ipTestRegex) {
         this.userInput = "ipAddress=".concat(this.userInput);
-        console.log(this.userInput);
       } else if (this.domainTestRegex) {
         this.userInput = "domain=".concat(this.userInput);
-        console.log(this.userInput);
       } else {
         this.form.classList.add("".concat(this.selectors.invalidClass));
         return false;
@@ -323,7 +320,6 @@ var Tracker = /*#__PURE__*/function () {
       fetch("".concat(this.apiLink, "ip=").concat(ipAddress || this.ipAddress)).then(function (res) {
         return res.json();
       }).then(function (data) {
-        console.log(data);
         _this2.formEnabled = true;
         _this2.cordX = data.location.lat;
         _this2.cordY = data.location.lng;

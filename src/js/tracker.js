@@ -29,7 +29,6 @@ export default class Tracker {
         
         if (!this.form || !this.input || !this.button || !this.results || !this.loader || !this.map) return false;
 
-        this.proxy = `https://cors.bridged.cc/`;
         this.apiLink = `/.netlify/functions/geoapi?`;
         this.ipAddressRegex = /^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$/;
         this.domainRegex = /^(?!:\/\/)([a-zA-Z0-9-_]+\.)*[a-zA-Z0-9][a-zA-Z0-9-_]+\.[a-zA-Z]{2,11}?$/;
@@ -57,10 +56,8 @@ export default class Tracker {
         // Checking input for ip address or domain
         if (this.ipTestRegex) {
             this.userInput = `ipAddress=${this.userInput}`;
-            console.log(this.userInput);
         } else if (this.domainTestRegex) {
             this.userInput = `domain=${this.userInput}`;
-            console.log(this.userInput);
         } else {
             this.form.classList.add(`${this.selectors.invalidClass}`);
             return false;
@@ -78,7 +75,6 @@ export default class Tracker {
         fetch(`${this.apiLink}ip=${ipAddress || this.ipAddress}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 this.formEnabled = true;
                 this.cordX = data.location.lat;
                 this.cordY = data.location.lng;
