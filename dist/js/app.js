@@ -257,7 +257,8 @@ var Tracker = /*#__PURE__*/function () {
         button: 'data-btn',
         results: 'data-result',
         loader: 'data-loader',
-        loadingClass: 'loading'
+        loadingClass: 'loading',
+        invalidClass: 'invalid'
       };
       this.form = document.querySelector("[".concat(this.selectors.form, "]"));
       this.input = document.querySelector("[".concat(this.selectors.input, "]"));
@@ -294,13 +295,15 @@ var Tracker = /*#__PURE__*/function () {
     value: function formValidation() {
       this.userInput = this.input.value;
       this.ipTestRegex = this.ipAddressRegex.test(this.userInput);
-      this.domainTestRegex = this.domainRegex.test(this.userInput); // Checking input for ip address or domain
+      this.domainTestRegex = this.domainRegex.test(this.userInput);
+      this.form.classList.remove("".concat(this.selectors.invalidClass)); // Checking input for ip address or domain
 
       if (this.ipTestRegex) {
         this.userInput = this.input.value;
       } else if (this.domainTestRegex) {
         this.userInput = "&domain=".concat(this.userInput);
       } else {
+        this.form.classList.add("".concat(this.selectors.invalidClass));
         return false;
       }
 
