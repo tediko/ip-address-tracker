@@ -269,8 +269,7 @@ var Tracker = /*#__PURE__*/function () {
       this.collapse = new _collapseMenu__WEBPACK_IMPORTED_MODULE_1__.default();
       if (!this.form || !this.input || !this.button || !this.results || !this.loader || !this.map) return false;
       this.proxy = "https://cors.bridged.cc/";
-      this.apiLink = "https://geo.ipify.org/api/v1?apiKey=";
-      this.API_KEY = "at_R0HafQ3Z5HCsAKIzRon7oFEXnSwp1";
+      this.apiLink = "/.netlify/functions/geoapi?";
       this.ipAddressRegex = /^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$/;
       this.domainRegex = /^(?!:\/\/)([a-zA-Z0-9-_]+\.)*[a-zA-Z0-9][a-zA-Z0-9-_]+\.[a-zA-Z]{2,11}?$/;
       this.ipAddress = "";
@@ -299,7 +298,7 @@ var Tracker = /*#__PURE__*/function () {
       this.form.classList.remove("".concat(this.selectors.invalidClass)); // Checking input for ip address or domain
 
       if (this.ipTestRegex) {
-        this.userInput = this.input.value;
+        this.userInput = "&ipAddress=".concat(this.input.value);
       } else if (this.domainTestRegex) {
         this.userInput = "&domain=".concat(this.userInput);
       } else {
@@ -319,7 +318,7 @@ var Tracker = /*#__PURE__*/function () {
     value: function fetchData(ipAddress) {
       var _this2 = this;
 
-      fetch("".concat(this.proxy).concat(this.apiLink).concat(this.API_KEY, "&ipAddress=").concat(ipAddress || this.ipAddress)).then(function (res) {
+      fetch("".concat(this.apiLink, "?ip=").concat(ipAddress || this.ipAddress)).then(function (res) {
         return res.json();
       }).then(function (data) {
         console.log(data);
@@ -369,7 +368,7 @@ var Tracker = /*#__PURE__*/function () {
         return res.text();
       }).then(function (data) {
         var ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/;
-        _this4.ipAddress = data.match(ipRegex)[0];
+        _this4.ipAddress = "&ipAddress=".concat(data.match(ipRegex)[0]);
 
         _this4.fetchData();
       });
