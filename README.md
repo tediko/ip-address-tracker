@@ -11,6 +11,7 @@
 - [My process](#my-process)
   - [Built with](#built-with)
   - [Features](#features)
+  - [Problems](#problems)
   - [Useful resources](#useful-resources)
 
 ## Overview
@@ -20,9 +21,9 @@ Hello! This is my solution to [IP address tracker - Frontend Mentor](https://www
 
 ### The challenge
 
->Your challenge is to build out this IP Address Tracker app >and get it looking as close to the design as possible. To >get the IP Address locations, you'll be using the [IP >Geolocation API by IPify](https://geo.ipify.org/). To >generate the map, we recommend using [LeafletJS](https://>leafletjs.com/).
+>Your challenge is to build out this IP Address Tracker app and get it looking as close to the design as possible. To get the IP Address locations, you'll be using the [IP Geolocation API by IPify](https://geo.ipify.org/). To generate the map, we recommend using [LeafletJS](https://>leafletjs.com/).
 >
->You can use any tools you like to help you complete the >challenge. So if you've got something you'd like to >practice, feel free to give it a go.
+>You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
 >
 >Your users should be able to:
 >
@@ -56,6 +57,11 @@ Hello! This is my solution to [IP address tracker - Frontend Mentor](https://www
 - Added `aria-live="polite"` and `aria-atomic="true"` to my `.tracker__results-wrapper` element to expose dynamic content changes in a way that can be announced by assistive technologies after my results inner elements change content.
 - I didn't like that results container with address informations cover the map and user can't do anything with that. Added button to hide that container. More useful on mobile tho.
 - Implement `prefers-reduced-motion` CSS media feature which is used to detect if the user has requested that the system minimize the amount of non-essential motion it uses. Prevent animations in brief.
+
+### Problems
+
+- The problem I talked in intro occurs only on Firefox. Console throws an CORS error -> `Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource`. It turned out that after the recent firefox update you cannot fetch data between different origins. The fix is to send request to a proxy. A proxy acts as an intermediary between a client and server. The proxy server operates in between the frontend web app making the request, and the server that responds with data. Simply add https://cors.bridged.cc/ to any URL you’re fetching from or use `cors-anywhere`. Since I work with serverless function on netlify I didn't have to put this in my fetch, because netlify fetching that data for me. But i think that info will be helpful for others. 
+- Since we're using proxy, we have to somehow get user IP if we want to display user info on init. That is because *geo api* will return proxy ip address on default. I use [cloudflare](https://www.cloudflare.com/cdn-cgi/trace) trace utility to work around this problem. It retunrs a plain-text set of key/value pairs. 
 
 ### Useful resources
  
