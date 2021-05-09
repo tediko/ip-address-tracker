@@ -15,7 +15,8 @@ export default class Tracker {
             button: 'data-btn',
             results: 'data-result',
             loader: 'data-loader',
-            loadingClass: 'loading'
+            loadingClass: 'loading',
+            invalidClass: 'invalid'
         }
 
         this.form = document.querySelector(`[${this.selectors.form}]`);
@@ -52,13 +53,15 @@ export default class Tracker {
         this.userInput = this.input.value;
         this.ipTestRegex = this.ipAddressRegex.test(this.userInput);
         this.domainTestRegex = this.domainRegex.test(this.userInput);
-        
+        this.form.classList.remove(`${this.selectors.invalidClass}`);
+
         // Checking input for ip address or domain
         if (this.ipTestRegex) {
             this.userInput = this.input.value;
         } else if (this.domainTestRegex) {
             this.userInput = `&domain=${this.userInput}`;
         } else {
+            this.form.classList.add(`${this.selectors.invalidClass}`);
             return false;
         }
 
