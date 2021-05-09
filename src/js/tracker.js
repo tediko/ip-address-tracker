@@ -30,8 +30,7 @@ export default class Tracker {
         if (!this.form || !this.input || !this.button || !this.results || !this.loader || !this.map) return false;
 
         this.proxy = `https://cors.bridged.cc/`;
-        this.apiLink = `https://geo.ipify.org/api/v1?apiKey=`;
-        this.API_KEY = `at_R0HafQ3Z5HCsAKIzRon7oFEXnSwp1`;
+        this.apiLink = `/.netlify/functions/geoapi?`;
         this.ipAddressRegex = /^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$/;
         this.domainRegex = /^(?!:\/\/)([a-zA-Z0-9-_]+\.)*[a-zA-Z0-9][a-zA-Z0-9-_]+\.[a-zA-Z]{2,11}?$/;
         this.ipAddress = ``;
@@ -57,7 +56,7 @@ export default class Tracker {
 
         // Checking input for ip address or domain
         if (this.ipTestRegex) {
-            this.userInput = this.input.value;
+            this.userInput = `&ipAddress=${this.input.value}`;
         } else if (this.domainTestRegex) {
             this.userInput = `&domain=${this.userInput}`;
         } else {
@@ -74,7 +73,7 @@ export default class Tracker {
 
     // Fetching data from geo API.
     fetchData(ipAddress) {
-        fetch(`${this.proxy}${this.apiLink}${this.API_KEY}&ipAddress=${ipAddress || this.ipAddress}`)
+        fetch(`${this.apiLink}?ip=${ipAddress || this.ipAddress}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -115,7 +114,7 @@ export default class Tracker {
         .then(res => res.text())
         .then(data => {
             let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/
-            this.ipAddress = data.match(ipRegex)[0];
+            this.ipAddress = `&ipAddress=${data.match(ipRegex)[0]}`;
             this.fetchData();
         })
     }
