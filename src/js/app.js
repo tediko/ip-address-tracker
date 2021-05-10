@@ -1,2 +1,3 @@
-import Map from './map.js';
-let map = new Map();
+import Tracker from './tracker';
+
+let tracker = new Tracker();
