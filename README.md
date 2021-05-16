@@ -19,6 +19,8 @@
 ### Intro
 Hello! This is my solution to [IP address tracker - Frontend Mentor](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0). Im surprised how much I learned from a seemingly easy challenge. I ran into problems with CORS on firefox and lost a lot of time trying to figure it out. For the first time I used webpack, environment variables and object literals. 
 
+⭐**Featured solution in [Vol. 54 of the Frontend Mentor Newsletter](https://mailchi.mp/6124bca07a15/frontend-mentor-newsletter-vol-54?e=212d9dcf83).**
+
 ### The challenge
 
 >Your challenge is to build out this IP Address Tracker app and get it looking as close to the design as possible. To get the IP Address locations, you'll be using the [IP Geolocation API by IPify](https://geo.ipify.org/). To generate the map, we recommend using [LeafletJS](https://>leafletjs.com/).
